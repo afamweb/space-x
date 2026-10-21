@@ -4,79 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>destination</title>
-    <link rel="stylesheet" href="./mars.css" />
+    <title>Mars | Destination</title>
+    <link rel="icon" href="./space-tourism-website-main/starter-code/assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <div class="nav-bar">
+  <body class="destination-page">
+    <header class="nav-bar">
+      <input type="checkbox" id="nav" />
       <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-          <g fill="none" fill-rule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
+        <a href="./home.html" aria-label="Space tourism home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" aria-hidden="true">
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="24" cy="24" r="24" fill="#FFF" />
+              <path
+                fill="#0B0D17"
+                d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+              />
+            </g>
+          </svg>
+        </a>
+        <div class="line"></div>
       </div>
-      <div class="line"></div>
-      <div class="nav-right">
-        <input type="checkbox" name="" id="" />
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21">
-          <g fill="#D0D6F9" fill-rule="evenodd">
-            <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
-          </g>
-        </svg>
-        <ul>
-          <li><a href="./home.html">00 HOME</a></li>
-          <li><a href="./destination.html">01 DESTINATION</a></li>
-          <li><a href="./CREW.html">02 CREW</a></li>
-          <li><a href="./TECHNOLOGY.html"> 03 TECHNOLOGY</a></li>
+      <label
+        for="nav"
+        class="mobile-nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        ><span class="sr-only">Menu</span></label
+      >
+      <nav aria-label="Primary">
+        <ul id="primary-nav" class="primary-navigation">
+          <li>
+            <a href="./home.html"><span>00</span> HOME</a>
+          </li>
+          <li>
+            <a href="./destination.html" aria-current="page"><span>01</span> DESTINATION</a>
+          </li>
+          <li>
+            <a href="./CREW.html"><span>02</span> CREW</a>
+          </li>
+          <li>
+            <a href="./TECHNOLOGY.html"><span>03</span> TECHNOLOGY</a>
+          </li>
         </ul>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="heading">
-        <h5>
-          <p>01</p>
-          Pick your destination
-        </h5>
-      </div>
-
-      <div class="down">
-        <div class="left">
-          <img
-            src="./space-tourism-website-main/starter-code/assets/destination/image-mars.webp"
-            alt="Mars"
-          />
-        </div>
-        <div class="right">
-          <ul>
-            <li><a href="./destination.html">MOON</a></li>
-            <li><a href="./mars.html">MARS</a></li>
-            <li><a href="./EUROPA.html">EUROPA</a></li>
-            <li><a href="./TITAN.html">TITAN</a></li>
-          </ul>
-
-          <h2>MARS</h2>
-          <p>
-            Don’t forget to pack your hiking boots. You’ll need them to <br>tackle Olympus Mons, the tallest planetary mountain in <br>our solar system. It’s two and a half times the size of<br> Everest!
-          </p>
-          <div class="down-line"></div>
-         <div class="tin"></div>
-          <div class="foot">
-            <div class="foot-left">
-              <p>AVG. DISTANCE</p>
-              <h5>225 MIL. km</h5>
-            </div>
-            <div class="foot-right">
-              <p>Est. travel time</p>
-              <h5>9 months</h5>
-            </div>
+      </nav>
+    </header>
+    <main>
+      <div class="dest-layout">
+        <h1 class="page-title"><span>01</span> Pick your destination</h1>
+        <picture class="dest-figure">
+          <source srcset="./space-tourism-website-main/starter-code/assets/destination/image-mars.webp" type="image/webp" />
+          <img class="dest-image" src="./space-tourism-website-main/starter-code/assets/destination/image-mars.png" alt="The Mars" />
+        </picture>
+        <div class="dest-info">
+          <div class="dest-tabs" aria-label="Destinations">
+          <a href="./destination.html">Moon</a>
+          <a href="./mars.html" aria-current="page">Mars</a>
+          <a href="./EUROPA.html">Europa</a>
+          <a href="./TITAN.html">Titan</a>
           </div>
+          <h2 class="heading-xl">Mars</h2>
+          <p class="body-text">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!</p>
+          <dl class="dest-stats">
+            <div>
+              <dt>Avg. distance</dt>
+              <dd>225 mil. km</dd>
+            </div>
+            <div>
+              <dt>Est. travel time</dt>
+              <dd>9 months</dd>
+            </div>
+          </dl>
         </div>
       </div>
-    </div>
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -567,3 +567,190 @@ h2.heading-lg {
     line-height: 1.65;
   }
 }
+
+/* ---------- Destination pages (Moon, Mars, Europa, Titan) ---------- */
+body.destination-page {
+  background-image: url("./space-tourism-website-main/starter-code/assets/destination/background-destination-desktop.jpg");
+}
+
+.dest-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "title title"
+    "image info";
+  column-gap: 4rem;
+  align-items: center;
+  padding-right: 3.5rem;
+}
+
+.dest-layout .page-title {
+  margin-bottom: 2rem;
+}
+
+.dest-figure {
+  grid-area: image;
+  justify-self: center;
+  display: block;
+  width: min(100%, 27.8rem);
+}
+
+.dest-image {
+  width: 100%;
+  height: auto;
+}
+
+.dest-info {
+  grid-area: info;
+  max-width: 34rem;
+}
+
+.dest-tabs {
+  display: flex;
+  gap: 2.2rem;
+  margin-bottom: 1.75rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.dest-tabs a {
+  display: block;
+  padding: 0.5rem 0;
+  border-bottom: 3px solid transparent;
+  color: var(--light);
+  text-decoration: none;
+}
+
+.dest-tabs a:hover,
+.dest-tabs a:focus-visible {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+}
+
+.dest-tabs a[aria-current="page"] {
+  border-bottom-color: var(--white);
+  color: var(--white);
+}
+
+h2.heading-xl {
+  font-family: "Bellefair", serif;
+  font-size: clamp(4rem, 9vw, 6.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.dest-info .body-text {
+  margin-top: 0.5rem;
+}
+
+.dest-stats {
+  display: flex;
+  gap: 4.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dest-stats dt {
+  margin-bottom: 0.75rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+.dest-stats dd {
+  font-family: "Bellefair", serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 900px) {
+  body.destination-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/destination/background-destination-tablet.jpg");
+  }
+
+  .dest-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "image"
+      "info";
+    row-gap: 2rem;
+    justify-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .dest-layout .page-title {
+    justify-self: start;
+    margin-bottom: 0;
+  }
+
+  .dest-figure {
+    width: min(60%, 18.75rem);
+  }
+
+  .dest-info {
+    padding: 0 2.4rem 3rem;
+  }
+
+  .dest-tabs {
+    justify-content: center;
+  }
+
+  .dest-stats {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .dest-info .body-text {
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body.destination-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/destination/background-destination-mobile.jpg");
+  }
+
+  .dest-layout {
+    padding-inline: 0;
+    row-gap: 1.5rem;
+  }
+
+  .dest-layout .page-title {
+    justify-self: center;
+  }
+
+  .dest-figure {
+    width: 10.5rem;
+  }
+
+  .dest-info {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .dest-tabs {
+    gap: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  h2.heading-xl {
+    font-size: 3.5rem;
+  }
+
+  .dest-stats {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .dest-stats dd {
+    font-size: 1.75rem;
+  }
+}
