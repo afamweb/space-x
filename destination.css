@@ -19,6 +19,7 @@
 }
 
 body {
+  overflow-x: clip;
   background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -226,6 +227,70 @@ li:not(a:last-of-type) {
 .down li:not(a:last-of-type) {
   margin-right: min(2vw, 2em);
 }
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    padding: 0 0 1em clamp(1em, 3vw, 10em);
+    height: 10vh;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    background-color: #bfc4e211;
+    backdrop-filter: blur(3em);
+    position: relative;
+    border-radius: 5px;
+    height: 100%;
+    padding: 0em clamp(0.7em, 2vw, 3em);
+    font-family: "Barlow Condensed", sans-serif;
+  }
+  li a {
+    font-size: clamp(0.7em, 2vw, 2em);
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+  }
+  .down {
+    place-items: center;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .down h2 {
+    font-family: "Bellefair", serif;
+    font-size: clamp(5em, 7vw, 6em);
+    font-weight: 400;
+    color: #fff;
+  }
+  .down p {
+    font-family: "Barlow", sans-serif;
+    font-size: clamp(.9em, 2vw, 2em);
+    font-weight: 100;
+    color: #bfc2c9;
+    line-height: 1.3em;
+    margin-block: 1em;
+  }
+
+  .tin {
+    width: 80%;
+  }
+  .right {
+    margin: 0;
+  }
+  .foot,
+  .down ul {
+    justify-content: space-around;
+  }
+}
 @media screen and (max-width: 450px) {
   body {
     background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-mobile.jpg);
@@ -301,69 +366,5 @@ li:not(a:last-of-type) {
     right: 2rem;
     z-index: 9999;
     outline: none;
-  }
-}
-@media screen and (max-width: 600px) {
-  body {
-    background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-tablet.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-  }
-
-  .nav-bar {
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: space-between;
-    padding: 0 0 1em clamp(1em, 3vw, 10em);
-    height: 10vh;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    background-color: #bfc4e211;
-    backdrop-filter: blur(3em);
-    position: relative;
-    border-radius: 5px;
-    height: 100%;
-    padding: 0em clamp(0.7em, 2vw, 3em);
-    font-family: "Barlow Condensed", sans-serif;
-  }
-  li a {
-    font-size: clamp(0.7em, 2vw, 2em);
-    font-weight: 300;
-    text-decoration: none;
-    color: #fff;
-  }
-  .down {
-    place-items: center;
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .down h2 {
-    font-family: "Bellefair", serif;
-    font-size: clamp(5em, 7vw, 6em);
-    font-weight: 400;
-    color: #fff;
-  }
-  .down p {
-    font-family: "Barlow", sans-serif;
-    font-size: clamp(.9em, 2vw, 2em);
-    font-weight: 100;
-    color: #bfc2c9;
-    line-height: 1.3em;
-    margin-block: 1em;
-  }
-
-  .tin {
-    width: 80%;
-  }
-  .right {
-    margin: 0;
-  }
-  .foot,
-  .down ul {
-    justify-content: space-around;
   }
 }

@@ -18,6 +18,7 @@
 }
 
 body {
+  overflow-x: clip;
   background-image: url(./space-tourism-website-main/starter-code/assets/home/background-home-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
