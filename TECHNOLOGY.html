@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technology</title>
+    <link rel="icon" href="./space-tourism-website-main/starter-code/assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="technology-page">
+    <header class="nav-bar">
+      <input type="checkbox" id="nav" />
+      <div class="logo">
+        <a href="./home.html" aria-label="Space tourism home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" aria-hidden="true">
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="24" cy="24" r="24" fill="#FFF" />
+              <path
+                fill="#0B0D17"
+                d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+              />
+            </g>
+          </svg>
+        </a>
+        <div class="line"></div>
+      </div>
+      <label
+        for="nav"
+        class="mobile-nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        ><span class="sr-only">Menu</span></label
+      >
+      <nav aria-label="Primary">
+        <ul id="primary-nav" class="primary-navigation">
+          <li>
+            <a href="./home.html"><span>00</span> HOME</a>
+          </li>
+          <li>
+            <a href="./destination.html"><span>01</span> DESTINATION</a>
+          </li>
+          <li>
+            <a href="./CREW.html"><span>02</span> CREW</a>
+          </li>
+          <li>
+            <a href="./TECHNOLOGY.html" aria-current="page"><span>03</span> TECHNOLOGY</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="tech-layout">
+        <h1 class="page-title"><span>03</span> Space launch 101</h1>
+        <div class="number-tabs" role="tablist" aria-label="Launch technology" aria-orientation="vertical">
+        <button role="tab" id="tech-tab-0" aria-controls="tech-panel-0" aria-selected="true" tabindex="0"><span class="sr-only">Launch vehicle</span><span aria-hidden="true">1</span></button>
+        <button role="tab" id="tech-tab-1" aria-controls="tech-panel-1" aria-selected="false" tabindex="-1"><span class="sr-only">Spaceport</span><span aria-hidden="true">2</span></button>
+        <button role="tab" id="tech-tab-2" aria-controls="tech-panel-2" aria-selected="false" tabindex="-1"><span class="sr-only">Space capsule</span><span aria-hidden="true">3</span></button>
+        </div>
+      <div class="slide" id="tech-panel-0" role="tabpanel" aria-labelledby="tech-tab-0">
+        <div class="tech-copy">
+          <p class="eyebrow">The terminology…</p>
+          <h2 class="heading-lg">Launch vehicle</h2>
+          <p class="body-text">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth&#x27;s surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it&#x27;s quite an awe-inspiring sight on the launch pad!</p>
+        </div>
+        <picture class="tech-figure">
+          <source media="(max-width: 900px)" srcset="./space-tourism-website-main/starter-code/assets/technology/image-launch-vehicle-landscape.jpg" />
+          <img class="tech-image" src="./space-tourism-website-main/starter-code/assets/technology/image-launch-vehicle-portrait.jpg" alt="Launch vehicle" />
+        </picture>
+      </div>
+      <div class="slide" id="tech-panel-1" role="tabpanel" aria-labelledby="tech-tab-1" hidden>
+        <div class="tech-copy">
+          <p class="eyebrow">The terminology…</p>
+          <h2 class="heading-lg">Spaceport</h2>
+          <p class="body-text">A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.</p>
+        </div>
+        <picture class="tech-figure">
+          <source media="(max-width: 900px)" srcset="./space-tourism-website-main/starter-code/assets/technology/image-spaceport-landscape.jpg" />
+          <img class="tech-image" src="./space-tourism-website-main/starter-code/assets/technology/image-spaceport-portrait.jpg" alt="Spaceport" />
+        </picture>
+      </div>
+      <div class="slide" id="tech-panel-2" role="tabpanel" aria-labelledby="tech-tab-2" hidden>
+        <div class="tech-copy">
+          <p class="eyebrow">The terminology…</p>
+          <h2 class="heading-lg">Space capsule</h2>
+          <p class="body-text">A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth&#x27;s atmosphere without wings. Our capsule is where you&#x27;ll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.</p>
+        </div>
+        <picture class="tech-figure">
+          <source media="(max-width: 900px)" srcset="./space-tourism-website-main/starter-code/assets/technology/image-space-capsule-landscape.jpg" />
+          <img class="tech-image" src="./space-tourism-website-main/starter-code/assets/technology/image-space-capsule-portrait.jpg" alt="Space capsule" />
+        </picture>
+      </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+/* Shared styles for the Crew and Technology pages */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400&family=Bellefair&display=swap");
+
+:root {
+  --dark: #0b0d17;
+  --light: #d0d6f9;
+  --white: #ffffff;
+  --assets: "./space-tourism-website-main/starter-code/assets";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--white);
+  font-family: "Barlow", sans-serif;
+  background-color: var(--dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.crew-page {
+  background-image: url("./space-tourism-website-main/starter-code/assets/crew/background-crew-desktop.jpg");
+}
+
+body.technology-page {
+  background-image: url("./space-tourism-website-main/starter-code/assets/technology/background-technology-desktop.jpg");
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Navigation ---------- */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 2.5rem 0 0 3.5rem;
+}
+
+.nav-bar input {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.logo .line {
+  flex: 1;
+  height: 1px;
+  margin: 0 -2rem 0 3rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 0 clamp(3rem, 10vw, 7.5rem);
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.primary-navigation {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  list-style: none;
+}
+
+.primary-navigation a {
+  display: block;
+  padding: 2.2rem 0;
+  border-bottom: 3px solid transparent;
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primary-navigation a span {
+  margin-right: 0.6em;
+  font-weight: 700;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a:focus-visible {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.primary-navigation a[aria-current="page"] {
+  border-bottom-color: var(--white);
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* ---------- Page layout ---------- */
+main {
+  padding: 3rem 0 3rem 3.5rem;
+}
+
+.page-title {
+  grid-area: title;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.page-title span {
+  margin-right: 1rem;
+  font-weight: 700;
+  opacity: 0.25;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.slide {
+  display: contents;
+}
+
+.eyebrow {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+h2.heading-lg {
+  font-family: "Bellefair", serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.body-text {
+  max-width: 28rem;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--light);
+}
+
+/* ---------- Crew ---------- */
+.crew-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "title title"
+    "copy image"
+    "tabs image";
+  column-gap: 2rem;
+  min-height: calc(100vh - 12rem);
+}
+
+.crew-copy {
+  grid-area: copy;
+  align-self: center;
+  padding-top: 3rem;
+}
+
+.crew-copy .role {
+  margin-bottom: 1rem;
+  font-family: "Bellefair", serif;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.5;
+}
+
+.crew-copy .body-text {
+  margin-top: 1.5rem;
+}
+
+.crew-figure {
+  grid-area: image;
+  align-self: end;
+  justify-self: center;
+  display: block;
+}
+
+.crew-image {
+  max-height: 70vh;
+  width: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.dot-tabs {
+  grid-area: tabs;
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 0 0;
+}
+
+.dot-tabs button {
+  width: 0.9rem;
+  height: 0.9rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--white);
+  opacity: 0.17;
+  cursor: pointer;
+}
+
+.dot-tabs button:hover,
+.dot-tabs button:focus-visible {
+  opacity: 0.5;
+}
+
+.dot-tabs button[aria-selected="true"] {
+  opacity: 1;
+}
+
+/* ---------- Technology ---------- */
+.tech-layout {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 40%);
+  grid-template-areas:
+    "title title title"
+    "tabs copy image";
+  column-gap: 4rem;
+  align-items: center;
+  padding-right: 0;
+}
+
+.tech-layout .page-title {
+  margin-bottom: 2rem;
+}
+
+.number-tabs {
+  grid-area: tabs;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.number-tabs button {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white);
+  font-family: "Bellefair", serif;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.number-tabs button:hover,
+.number-tabs button:focus-visible {
+  border-color: var(--white);
+}
+
+.number-tabs button[aria-selected="true"] {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--dark);
+}
+
+.tech-copy {
+  grid-area: copy;
+}
+
+.tech-copy .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.tech-copy .body-text {
+  margin-top: 1.5rem;
+}
+
+.tech-figure {
+  grid-area: image;
+  justify-self: end;
+  display: block;
+  width: 100%;
+}
+
+.tech-image {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Tablet ---------- */
+@media screen and (max-width: 900px) {
+  body.crew-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/crew/background-crew-tablet.jpg");
+  }
+
+  body.technology-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/technology/background-technology-tablet.jpg");
+  }
+
+  .nav-bar {
+    padding: 0 0 0 2.4rem;
+  }
+
+  .logo .line {
+    display: none;
+  }
+
+  nav {
+    padding: 0 3rem;
+  }
+
+  .primary-navigation a {
+    padding: 2.2rem 0;
+    font-size: 0.875rem;
+  }
+
+  main {
+    padding: 2rem 0 0 0;
+  }
+
+  .page-title {
+    padding-left: 2.4rem;
+    font-size: 1.25rem;
+  }
+
+  /* Crew */
+  .crew-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title"
+      "copy"
+      "tabs"
+      "image";
+    justify-items: center;
+    text-align: center;
+    min-height: 0;
+  }
+
+  .crew-layout .page-title {
+    justify-self: start;
+  }
+
+  .crew-copy {
+    padding: 2rem 2.4rem 0;
+  }
+
+  .dot-tabs {
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .crew-image {
+    max-height: 55vh;
+  }
+
+  /* Technology */
+  .tech-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "image"
+      "tabs"
+      "copy";
+    row-gap: 2.5rem;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .tech-layout .page-title {
+    justify-self: start;
+    margin-bottom: 0;
+  }
+
+  .tech-figure {
+    justify-self: stretch;
+  }
+
+  .tech-image {
+    max-height: 22rem;
+    object-fit: cover;
+  }
+
+  .number-tabs {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .number-tabs button {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .tech-copy {
+    padding: 0 2.4rem 3rem;
+  }
+
+  .body-text {
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media screen and (max-width: 600px) {
+  body.crew-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/crew/background-crew-mobile.jpg");
+  }
+
+  body.technology-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/technology/background-technology-mobile.jpg");
+  }
+
+  .nav-bar {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    background: url("./space-tourism-website-main/starter-code/assets/shared/icon-hamburger.svg") center / contain no-repeat;
+  }
+
+  .nav-bar:has(:checked) .mobile-nav-toggle {
+    background-image: url("./space-tourism-website-main/starter-code/assets/shared/icon-close.svg");
+  }
+
+  nav {
+    position: fixed;
+    inset: 0 0 0 32%;
+    z-index: 2;
+    padding: 7.5rem 0 0 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
+  }
+
+  .nav-bar:has(:checked) > nav {
+    transform: translateX(0);
+  }
+
+  .primary-navigation {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .primary-navigation a {
+    padding: 0.9rem 0;
+    border-bottom: 0;
+    border-right: 3px solid transparent;
+    font-size: 1rem;
+  }
+
+  .primary-navigation a[aria-current="page"] {
+    border-right-color: var(--white);
+  }
+
+  .page-title {
+    padding-left: 0;
+    font-size: 1rem;
+    text-align: center;
+    justify-self: center !important;
+  }
+
+  .crew-layout,
+  .tech-layout {
+    padding-inline: 1.5rem;
+  }
+
+  .crew-layout {
+    grid-template-areas:
+      "title"
+      "image"
+      "tabs"
+      "copy";
+  }
+
+  .crew-copy {
+    padding: 0 0 3rem;
+  }
+
+  .crew-image {
+    max-height: 14rem;
+    margin-top: 1.5rem;
+  }
+
+  .dot-tabs {
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .dot-tabs button {
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+
+  .tech-layout {
+    padding-inline: 0;
+  }
+
+  .tech-layout .page-title {
+    padding-inline: 1.5rem;
+  }
+
+  .tech-image {
+    max-height: 10.5rem;
+  }
+
+  .tech-copy {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .number-tabs button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .crew-copy .role {
+    font-size: 1rem;
+  }
+
+  .tech-copy .eyebrow {
+    font-size: 0.875rem;
+  }
+
+  h2.heading-lg {
+    font-size: 1.5rem;
+  }
+
+  .body-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+}
