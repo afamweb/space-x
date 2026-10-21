@@ -754,3 +754,110 @@ h2.heading-xl {
     font-size: 1.75rem;
   }
 }
+
+/* ---------- Home page ---------- */
+body.home-page {
+  background-image: url("./space-tourism-website-main/starter-code/assets/home/background-home-desktop.jpg");
+}
+
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  column-gap: 3rem;
+  min-height: calc(100vh - 9rem);
+  padding: 3rem 8rem 6rem 10rem;
+}
+
+.home-copy .eyebrow {
+  font-size: clamp(1.1rem, 2vw, 1.75rem);
+}
+
+h1.heading-hero {
+  margin: 1.5rem 0;
+  font-family: "Bellefair", serif;
+  font-size: clamp(5rem, 12vw, 9.375rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-copy .body-text {
+  max-width: 27.75rem;
+}
+
+.explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(9rem, 19vw, 17.125rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: "Bellefair", serif;
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.explore:hover,
+.explore:focus-visible {
+  box-shadow: 0 0 0 5.5rem rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 900px) {
+  body.home-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/home/background-home-tablet.jpg");
+  }
+
+  .home-layout {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-items: start;
+    row-gap: 5rem;
+    min-height: calc(100vh - 6rem);
+    padding: 6rem 2.4rem 5rem;
+    text-align: center;
+  }
+
+  .home-copy .body-text {
+    margin-inline: auto;
+  }
+
+  .explore {
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body.home-page {
+    background-image: url("./space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg");
+  }
+
+  .home-layout {
+    row-gap: 4rem;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  h1.heading-hero {
+    font-size: 5rem;
+    margin: 1rem 0;
+  }
+
+  .home-copy .eyebrow {
+    font-size: 1rem;
+  }
+
+  .explore {
+    width: 9.5rem;
+    font-size: 1.25rem;
+  }
+
+  .explore:hover,
+  .explore:focus-visible {
+    box-shadow: 0 0 0 2.5rem rgba(255, 255, 255, 0.1);
+  }
+}
